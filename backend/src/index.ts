@@ -1,9 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.config();
-
 import express, { Request, Response } from 'express';
-const app = express();
+import { connectDB } from './config/db';
 
+const app = express();
+connectDB();
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Healthy Server');
